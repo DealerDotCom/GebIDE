@@ -1,0 +1,67 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+
+// The drivers we want to use
+def drivers = ["firefox", "chrome"]
+
+// versions
+def gebVersion = "0.6.2" //TODO: update me!
+def seleniumVersion = "2.25.0"
+
+
+dependencies {
+    groovy "org.codehaus.groovy:groovy-all:1.7.5" //TODO: update me!
+
+    compile "org.spockframework:spock-core:0.5-groovy-1.7"//TODO: update me!
+
+    // If using Spock, need to depend on geb-spock
+    compile "org.codehaus.geb:geb-spock:$gebVersion"
+
+    // If using JUnit, need to depend on geb-junit (3 or 4)
+    compile "org.codehaus.geb:geb-junit4:$gebVersion"
+    compile "junit:junit-dep:4.8.2"
+
+    compile "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+
+    // Drivers
+    drivers.each { driver ->
+        compile "org.seleniumhq.selenium:selenium-$driver-driver:$seleniumVersion"
+    }
+}
+
+task singleTest(type: Test) {
+    testReportDir = file("$reportsDir/$name/tests")
+    testResultsDir = file("$buildDir/test-results/$name")
+
+    it.metaClass.gebReportsDir = "$reportsDir/$name/geb"
+
+    systemProperty "geb.build.reportsDir", "$reportsDir/$name/geb"
+
+    if(System.properties['geb.env'] == null){
+        systemProperty "geb.env", 'firefox'
+    }
+}
+
+drivers.each { driver ->
+    task "${driver}Test"(type: Test) {
+        testReportDir = file("$reportsDir/$name/tests")
+        testResultsDir = file("$buildDir/test-results/$name")
+
+        it.metaClass.gebReportsDir = "$reportsDir/$name/geb"
+
+        systemProperty "geb.build.reportsDir", "$reportsDir/$name/geb"
+        systemProperty "geb.env", driver
+    }
+}
+
+task gebConsole(dependsOn:classes, type:JavaExec) {
+    srcFile = file("src/main/groovy/geb/console/RunGebConsole.groovy")
+    inputs.file srcFile
+    main = 'geb.console.RunGebConsole'
+    classpath sourceSets.main.runtimeClasspath
+}
