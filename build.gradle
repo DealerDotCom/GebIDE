@@ -69,3 +69,8 @@ task gebIde(dependsOn: classes, type: JavaExec) {
     main = 'geb.console.RunGebConsole'
     classpath sourceSets.main.runtimeClasspath
 }
+
+
+task wrapper(type: Wrapper){
+  gradleVersion = '1.2'
+}
