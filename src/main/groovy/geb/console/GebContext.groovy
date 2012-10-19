@@ -3,15 +3,14 @@ package geb.console
 import geb.Browser
 import geb.Configuration
 import geb.ConfigurationLoader
+import geb.navigator.Navigator
 
 /**
  * Context object that the Geb Console executes code within. All console code will be wrapped in a with closure like the following:
  *
  * def ctx = new GebContext()
- * ctx.with{
- *   // console script code
- * }
- *
+ * ctx.with{*   // console script code
+ *}*
  * Largely cribbed from <code>GebSpec</code>, with the addition of the <code>highlight()</code> method.
  *
  */
@@ -69,6 +68,21 @@ class GebContext{
         js.exec(elements, "background-color: red;", "for(var i=0; i<arguments[0].length; i++){ arguments[0][i].setAttribute('style', arguments[1]);}");
         Thread.sleep(sleep)
         js.exec(elements, "", "for(var i=0; i<arguments[0].length; i++){ arguments[0][i].setAttribute('style', arguments[1]);}");
+
+    }
+
+    void inspect(nav){
+        if(nav == null){
+            return
+        }
+        try{
+            def elements = nav.allElements()
+            if(elements){
+                js.exec(elements, "window.showGebResults(arguments[0]);return true;")
+            }
+        } catch(Exception e){
+            e.printStackTrace()
+        }
 
     }
 }

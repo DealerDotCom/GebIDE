@@ -8,14 +8,25 @@ import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxProfile
 
+def defaultFirebugVersion = '1.9.2'
+def firebugXpiPath = System.getProperty('gebIde.firebugXpi.path', "firefoxExtensions/firebug-${firebugVersion}.xpi")
+def gebIdeXpiPath = System.getProperty('gebIde.ideXpi.path', "firefoxExtensions/gebIDE.xpi")
 
-def firebugVersion = '1.9.0'
+
 def firefoxProfile = {
-    File file = new File("/Users/ddcelleryc/Projects/crm/common/functional-tests/src/test/resources/firebug-${firebugVersion}.xpi"); //TODO: change to your own
-    println "firebug xpi exists? ${file.exists()}"
+    File firebugXpi = new File(firebugXpiPath)
+    File gebIdeXpi = new File(gebIdeXpiPath)
+    println "firebug xpi exists? ${firebugXpi.exists()}"
+    println "gebIDE xpi exists? ${gebIdeXpi.exists()}"
     FirefoxProfile firefoxProfile = new FirefoxProfile();
-    firefoxProfile.addExtension(file);
-    firefoxProfile.setPreference("extensions.firebug.currentVersion", firebugVersion);
+    firefoxProfile.addExtension(firebugXpi);
+    firefoxProfile.addExtension(gebIdeXpi);
+    firefoxProfile.setPreference("extensions.firebug.currentVersion", defaultFirebugVersion)
+    firefoxProfile.setPreference("extensions.firebug.defaultPanelName", 'firefinder')
+    firefoxProfile.setPreference("extensions.firebug.addonBarOpened", true)
+    firefoxProfile.setPreference("extensions.firebug.toolbarCustomizationDone", true)
+    firefoxProfile.setPreference("extensions.firebug.allPagesActivation", 'on')
+
     return firefoxProfile
 }
 

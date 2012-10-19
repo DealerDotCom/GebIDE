@@ -1,0 +1,8 @@
+<!ENTITY showfirefinder "Show Geb IDE for Firebug">
+<!ENTITY firefindelement "Show in Geb IDE">
+<!ENTITY firefinderautoselect "Auto-select">
+<!ENTITY firefinderclear "Clear">
+<!ENTITY firefinderhide "Hide">
+<!ENTITY firefinderautoselectelement "Auto-select HTML element by activating this and then hovering over it">
+<!ENTITY firefinderclearresults "Clear results">
+<!ENTITY firefinderhidefirebug "Hide Firebug">

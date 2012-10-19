@@ -51,6 +51,8 @@ def runConsole = {
 //    ctx.resetBrowser()
 }
 
-runConsole()
+ctx.go "http://www.google.com"
+
+//runConsole()
 
 

@@ -1,0 +1,93 @@
+/* Firebug styles */
+#firefinder-container {
+	width: 800px;
+	padding: 10px 20px;
+}
+
+#firefinder-container h1 {
+	/*background: url(chrome://firefinder/skin/logo.png) no-repeat 0 -6px;*/
+	margin: 0 0 10px;
+	/*padding-left: 36px;*/
+	border-bottom: 1px solid #000;
+}
+
+#firefinder-help-text {
+	font-weight: normal;
+	font-size: 10px;
+}
+
+.firefinder-field {
+	width: 70%;
+	margin-right: 10px;
+}
+
+#firefinder-container h2 {
+	margin: 20px 0 10px;
+	border-bottom: 1px solid #aaa;
+}
+
+.firefinder-results-container.initial-view {
+	display: none;
+}
+
+.firefinder-results-container.initial-view {
+	display: none;
+}
+
+.firefinder-results .firefinder-result-item {
+	display: block;
+	cursor: pointer;
+	color: #008;
+	background: url(chrome://firefinder/skin/expanded.png) no-repeat 10px 14px;
+	padding: 10px 10px 10px 25px;
+	border-bottom: 1px solid #ccc;
+}
+
+.firefinder-results .firefinder-result-item.collapsed {
+	background-image: url(chrome://firefinder/skin/collapsed.png);
+	background-position: 10px 12px;
+}
+
+.firefinder-results .firefinder-result-item .firefinder-inspect-element {
+	float: right;
+	margin: 0 10px 10px 0;
+	padding-left: 10px;
+	border-left: 1px solid #008;
+}
+
+.firefinder-results .firefinder-result-item .firefinder-friendly-fire-this {
+	float: right;
+	margin: 0 10px 10px;
+}
+
+.firefinder-results .firefinder-result-item .firefinder-friendly-fire-url {
+	color: #00f;
+	margin-right: 3px;
+}
+
+.firefinder-results .firefinder-result-item.collapsed .inner-code-container,
+.firefinder-results .firefinder-result-item.collapsed .end-tag {
+	display: none;
+}
+
+.firefinder-results .firefinder-result-item.odd {
+	background-color: #eee;
+}
+
+.firefinder-results .firefinder-result-item span.node-name {
+	color: #00f;
+}
+
+.firefinder-results .firefinder-result-item span.attribute-value {
+	color: #f00;
+}
+
+.firefinder-results .firefinder-result-item .inner-code-container {
+	cursor: auto;
+	padding-left: 10px;
+}
+
+.firefinder-results .firefinder-result-item h1 {
+	margin: 0 0 10px;
+	border-bottom: none;
+}

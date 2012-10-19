@@ -57,10 +57,11 @@ class ContextualGroovyShell extends GroovyShell{
             sb << imports.collect {"import $it"}.join('\n')
             sb << '\n\n'
         }
-        sb << CONTEXT_VARIABLE+'.with{\n'
+        sb << 'def result = '+CONTEXT_VARIABLE+'.with{\n'
         sb << scriptText
         sb << '\n'
-        sb << '}'
+        sb << '}\n'
+        sb << CONTEXT_VARIABLE+'.inspect(result)'
         return sb.toString()
     }
 }

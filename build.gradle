@@ -5,7 +5,6 @@ repositories {
     mavenCentral()
 }
 
-
 // The drivers we want to use
 def drivers = ["firefox", "chrome"]
 
@@ -59,7 +58,12 @@ drivers.each { driver ->
     }
 }
 
-task gebConsole(dependsOn:classes, type:JavaExec) {
+task gebConsole(dependsOn: classes, type: JavaExec) {
+    File firebugXpi = file('firefoxExtensions/firebug-1.9.2.xpi')
+    File gebIdeXpi = file('firefoxExtensions/gebIDE.xpi')
+    systemProperty "gebIde.firebugXpi.path", firebugXpi.absolutePath
+    systemProperty "gebIde.ideXpi.path", gebIdeXpi.absolutePath
+
     srcFile = file("src/main/groovy/geb/console/RunGebConsole.groovy")
     inputs.file srcFile
     main = 'geb.console.RunGebConsole'
