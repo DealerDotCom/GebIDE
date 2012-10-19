@@ -58,7 +58,7 @@ drivers.each { driver ->
     }
 }
 
-task gebConsole(dependsOn: classes, type: JavaExec) {
+task gebIde(dependsOn: classes, type: JavaExec) {
     File firebugXpi = file('firefoxExtensions/firebug-1.9.2.xpi')
     File gebIdeXpi = file('firefoxExtensions/gebIDE.xpi')
     systemProperty "gebIde.firebugXpi.path", firebugXpi.absolutePath
