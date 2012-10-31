@@ -75,7 +75,7 @@ Possible Feature Roadmap
 * Load and run unit tests from within the GebIDE, and/or expose hooks to an external debugger
 	* Even just running tests externally that can use the existing browser/WebDriver from the GebIDE would speed things up tremendously, especially with the ability to pause the test and use the IDE to debug any issues
 * Save 'Geb blocks' on the fly (re-runnable series of commands; basically components that might make up a test)
-	* Example block:
+	* Example: (block that fills out a form)
 			<pre>showFormButton.click()
 waitFor{myForm.content.displayed}
 myForm.content << 'some text'
