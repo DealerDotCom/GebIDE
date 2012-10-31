@@ -54,12 +54,12 @@ The Geb IDE is an attempt to fix that. It allows you to spin up a browser with a
 
 The IDE in its current form is pretty rudimentary; it executes Geb expressions and highlights any DOM elements they return in the page, with the option to inspect each in Firebug. This is cool, but there is the potential to go a lot deeper with this tool. There is a lot of potential to improve this; not just to make it easy to test selectors, but to actually make it easier and faster to understand and iterate on your code. From a UI perspective, we're already used to having this power during development: that's exactly what things like Firebug and Chrome developer tools are for! You don't have to recompile your code and launch a new browser to just to test out a new CSS rule; you can just tweak it in Firebug until you're happy with it. Writing Geb tests shouldn't be any different.
 
-With these goals in mind, here is a possible feature roadmap that has come about from discussions I have had with Geb developers of various levels of experience, both at Dealer.com and SpringOne.
+With these goals in mind, here is a possible feature roadmap that has come about from discussions I have had with Geb developers of various levels of experience both inside and outside of my company.
 
 Possible Feature Roadmap
 -------
 
-* Expanded inspector for expressions that do not return page content (ie, regular groovy objects, exceptions, etc)
+* Expanded inspector for expressions that do not return page content (eg, regular groovy objects, exceptions, etc)
 * View project Page and Module classes in GebIDE, with UI interactivity. Examples:
 	* Double click a Page to execute "to MyPage"
 	* Double click on a content definition to highlight it in current page
@@ -100,16 +100,16 @@ myForm.submitButton.click()
 	* Include counts of elements matching each suggestion (that include the preceding selectors)
 		* Arrow through suggestions, see them highlighted in browser
 * Css selector debugger
-	* Break selector into path with counts at each node, so you can see where you went wrong  (ie, '.body .list .expandable a' => [".body"=>1, ".body .list"=3, ".body .list .expandable"=>0])
+	* Break selector into path with counts at each node, so you can see where you went wrong  (eg, '.body .list .expandable a' => [".body"=>1, ".body .list"=3, ".body .list .expandable"=>0])
 * Expose current Geb config settings in IDE, allow some of them to be changed on the fly (base url comes to mind)
 * "Selenium IDE 'Record' Mode" 
 	* Everyone I've ever spoken to about Geb who is familiar with Selenium requests this feature. It is definitely not a trivial thing to implement, but there is work that could be done
 * Geb Report Inspector
 	* Load a page dump from a geb test into IDE to investigate failures using IDE tools
 	* View Geb-generated screen shots side by side/overlaid on page
-		* Existing firefox extensions can do this; might just need to bridge them into IDE
+		* Existing Firefox extensions can do this; might just need to bridge them into IDE
 * Connect IDE input to remote WebDriver instances running on different browsers/servers
 	* How to bridge output, such as highlighting?
-	* Testing out how Geb commands work in other browsers/environments would be hand
+	* Testing out how Geb commands work in other browsers/environments would be handy
 
 
