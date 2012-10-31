@@ -76,11 +76,12 @@ Possible Feature Roadmap
 	* Even just running tests externally that can use the existing browser/WebDriver from the GebIDE would speed things up tremendously, especially with the ability to pause the test and use the IDE to debug any issues
 * Save 'Geb blocks' on the fly (re-runnable series of commands; basically components that might make up a test)
 	* Example block:
-			```showFormButton.click()
+			```
+showFormButton.click()
 waitFor{myForm.content.displayed}
 myForm.content << 'some text'
 myForm.submitButton.click()
-```
+			```
 	* Develop these blocks as you develop the functionality they model; faster to re-run a block than test it manually
 		* If writing Geb code to test new features is faster than doing it manually, dev cost of writing functional tests plummets
 	* Copy/paste blocks into test code when you're ready to test it
