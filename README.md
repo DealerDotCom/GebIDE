@@ -33,7 +33,7 @@ tocItems[0].find('a').click()
 
 What is it?
 -------
-Geb is a powerful tool for writing browser based functional tests. This power comes at a cost, however* the development effort for writing and maintaining functional tests can be enormous. The most salient culprit in this regard is the delay between writing Geb code and seeing the results of executing that code in the browser. Adding to that issue is the inability to easily identify problems in the Geb code as they crop up; something as simple as a typo in a selector can result in large amounts of wasted time trying to track down what has broken. The standard functional test development/debugging process looks something like this:
+Geb is a powerful tool for writing browser based functional tests. This power comes at a cost, however- the development effort for writing and maintaining functional tests can be enormous. The most salient culprit in this regard is the delay between writing Geb code and seeing the results of executing that code in the browser. Adding to that issue is the inability to easily identify problems in the Geb code as they crop up; something as simple as a typo in a selector can result in large amounts of wasted time trying to track down what has broken. The standard functional test development/debugging process looks something like this:
 
 1. Write your Page class
 2. Write your test code
