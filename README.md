@@ -59,66 +59,50 @@ Possible Feature Roadmap
 -------
 
 * Expanded inspector for expressions that do not return page content (ie, regular groovy objects, exceptions, etc)
-
 * View project Page and Module classes in GebIDE, with UI interactivity. Examples:
 	* Double click a Page to execute "to MyPage"
 	* Double click on a content definition to highlight it in current page
 	* Visual indicator whether the "at" closure returns true 
 	* Syntax Highlighting
 	* Page content 'tree'* perhaps with counts/tags indicating how many matching elements are present
-
 * Page object "Legend" 
 	* Select each piece of Page content on the current page with color coding to visually identify all parts of the page object
 	* Provide insight into what a given page object actually maps to, so that developers who did not write the Page class can better understand what is being mapped where
-	
 * Classpath scanning for all Page/Module classes in the project, expose to IDE to avoid the need to import
 	* Need a strategy to handle name collisions
-	
 * Hot reloading of Page/Modules
 	* Modify source in GebIDE and recompile immediately?	
-	
 * Load and run unit tests from within the GebIDE, and/or expose hooks to an external debugger
 	* Even just running tests externally that can use the existing browser/WebDriver from the GebIDE would speed things up tremendously, especially with the ability to pause the test and use the IDE to debug any issues
-
 * Save 'Geb blocks' on the fly (re-runnable series of commands; basically components that might make up a test)
 	* Develop these blocks as you develop the functionality they model; faster to re-run a block than test it manually
 		* If writing Geb code to test new features is faster than doing it manually, dev cost of writing functional tests plummets
 	* Copy/paste blocks into test code when you're ready to test it
-
 * "Click to select" an element on the page, and the shortest css selector that can uniquely identify that element will be put into the GebIDE
 	* Even better would be if we could have the selector be relative to an existing piece of page content; nesting modules can make choosing the right selectors difficult
 	* Luke mentioned a library exists that may provide the 'shortest selector' logic for us
-	
 * Button to reset state of browser (clear cookies, etc) without needing to close/relaunch it
 	* Being able to work within an existing browser session is important for development speed, but the ability to clear everything out without restarting the browser would be very useful
-
 * Integrated Geb/WebDriver API documentation
 	* "What the heck does 'withWindow' do again?"
 	* Help with the learning curve inherent to adopting a new tool, and provide reminders to seasoned developers without needing to hunt through the manual
-
 * Page content/Geb DSL tab completion
 	* Make it easier to traverse nested modules by exposing tree for auto complete
-	
 * Css selector tab completion
 	* Scan in all css classnames/data element names/input names in the dom, expose to auto-complete library 
 	* Include counts of elements matching each suggestion (that include the preceding selectors)
 		* Arrow through suggestions, see them highlighted in browser
-	
 * Css selector debugger
-	* Break selector into path with counts at each node, so you can see where you went wrong (ie, '.body .list .expandable a' => [".body"=>1, ".body .list"=3, ".body .list .expandable"=>0])
-	
+	* Break selector into path with counts at each node, so you can see where you went wrong  (ie, '.body .list .expandable a' => [".body"=>1, ".body .list"=3, ".body .list .expandable"=>0])
 * Expose current Geb config settings in IDE, allow some of them to be changed on the fly (base url comes to mind)
-
 * "Selenium IDE 'Record' Mode" 
 	* Everyone I've ever spoken to about Geb who is familiar with Selenium requests this feature. It is definitely not a trivial thing to implement, but there is work that could be done
-
 * Geb Report Inspector
 	* Load a page dump from a geb test into IDE to investigate failures using IDE tools
 	* View Geb-generated screen shots side by side/overlaid on page
 		* Existing firefox extensions can do this; might just need to bridge them into IDE
-
 * Connect IDE input to remote WebDriver instances running on different browsers/servers
 	* How to bridge output, such as highlighting?
-	* Testing out how Geb commands work in other browsers/environments would be handy
+	* Testing out how Geb commands work in other browsers/environments would be hand
 
 
