@@ -33,7 +33,7 @@ tocItems[0].find('a').click()
 
 What is it?
 -------
-Geb is a powerful tool for writing browser based functional tests. This power comes at a cost, however- the development effort for writing and maintaining functional tests can be enormous. The most salient culprit in this regard is the delay between writing Geb code and seeing the results of executing that code in the browser. Adding to that issue is the inability to easily identify problems in the Geb code as they crop up; something as simple as a typo in a selector can result in large amounts of wasted time trying to track down what has broken. The standard functional test development/debugging process looks something like this:
+[Geb](http://www.gebish.org/) is a powerful tool for writing browser based functional tests. This power comes at a cost, however- the development effort for writing and maintaining functional tests can be enormous. The most salient culprit in this regard is the delay between writing Geb code and seeing the results of executing that code in the browser. Adding to that issue is the inability to easily identify problems in the Geb code as they crop up; something as simple as a typo in a selector can result in large amounts of wasted time trying to track down what has broken. The standard functional test development/debugging process looks something like this:
 
 1. Write your Page class
 2. Write your test code
@@ -53,7 +53,7 @@ The Geb IDE is an attempt to fix that. It allows you to spin up a browser with a
 
 The IDE in its current form is pretty rudimentary; it executes Geb expressions and highlights any DOM elements they return in the page, with the option to inspect each in Firebug. This is cool, but there is the potential to go a lot deeper with this tool. There is a lot of potential to improve this; not just to make it easy to test selectors, but to actually make it easier and faster to understand and iterate on your code. From a UI perspective, we're already used to having this power during development: that's exactly what things like Firebug and Chrome developer tools are for! You don't have to recompile your code and launch a new browser to just to test out a new CSS rule; you can just tweak it in Firebug until you're happy with it. Writing Geb tests shouldn't be any different.
 
-With these goals in mind, here is a possible feature roadmap that has come about from discussions I have had with Geb developers of various levels of experience at my company.
+With these goals in mind, here is a possible feature roadmap that has come about from discussions I have had with Geb developers of various levels of experience, both at Dealer.com and SpringOne.
 
 Possible Feature Roadmap
 -------
